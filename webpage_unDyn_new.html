@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MIT SENSEable City Lab</title>
+
+  <meta name="viewport" content="width=1280">
+
+  <link rel="icon" type="image/png" href="http://senseabledb.mit.edu/assets/favicon-16-22b722e460d7a446c2187af00cad4942.png" />
+  <link rel="apple-touch-icon" href="http://senseabledb.mit.edu/assets/MIT-ios-icon-iphone-120-d1ad7515d67eda6b7ad7ee8e55c9a765.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="http://senseabledb.mit.edu/assets/MIT-ios-icon-iphone-120-d1ad7515d67eda6b7ad7ee8e55c9a765.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="http://senseabledb.mit.edu/assets/MIT-ios-icon-ipad-152-d8a071d55d8c0c77f6e9fedffbf0976a.png">
+
+  <link href="http://senseabledb.mit.edu/assets/application-c0fe1dd5c7d2b4dcd13e41e8a0bfa3c9.css" media="all" rel="stylesheet" />
+  <script src="http://senseabledb.mit.edu/assets/application-7b372d5670d9c878375744a2dfb75c93.js"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="oic2GQIGhlGaq3d1nTFH3fIT87pMvF3TjttEwgWwo/g=" name="csrf-token" />
+</head>
+<body>
+  <div id="cache">
+  <img src="http://senseabledb.mit.edu/assets/stripes-e819f9cb165c7d686754740c3703dd21.png">
+  <img src="http://senseabledb.mit.edu/assets/preloader-bc624f1072186e1630fe63d65a04d985.gif">
+</div>
+
+<div id="wrapper">
+  <noscript>
+    <div class="alert">
+      <div class="alert-text">
+        Javascript is not currently enabled in your browser.<br/>
+        You must enable javascript to run this page correctly.
+      </div>
+    </div>
+  </noscript>
+
+  <div id="teaser">
+    <div id="teaser-close" class="teaser-close"></div>
+    <div class="teaser-container">
+      <div class="teaser-title">
+        <h2>
+          Senseable City Lab<br/>
+          Urban imagination and social innovation through anticipatory
+          design & science
+        </h2>
+      </div>
+      <div class="teaser-text teaser-text--left">
+        <p>
+          The real-time city is real! As layers of networks and digital
+          information blanket our urban space, a new approach to the study
+          of the built environment is emerging. The way we describe and
+          understand cities is being radically transformed¡ªas are the tools
+          we use to design them. The mission of the Senseable City Laboratory
+          is to anticipate these changes and study them from a
+          critical point of view. Not bound by the methodologies of a single field, the Lab ¨C a research
+          initiative at the Massachusetts Institute of Technology ¨C is characterized
+          by an omni-disciplinary approach.
+        </p>
+      </div>
+      <div class="teaser-text teaser-text--right">
+        <p>
+          It speaks the language of designers,
+          planners, engineers, physicists, biologists, mathematicians and social
+          scientists. Senseable is as fluent with Fortune 100 industry partners
+          as it is with metropolitan governments, individual citizens and
+          disadvantaged communities around the world. Through design and
+          science, the Lab develops and deploys tools to learn about cities¡ªso
+          that cities can learn about us.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <header id="header" role="banner">
+    <div class="brand">
+      <img class="brand-img" src="http://senseabledb.mit.edu/assets/MIT-logo-f45e53bac8dc39de3ba62798d9153394.svg"/>
+      <div class="brand-name">SENSEABLE CITY LAB</div>
+      <div class="brand-label">
+        Discover Senseable through who we are and what we produce. This is a
+        lens into our entire database ¨C <br/>browse all of the content below, and
+        click a category to rescale the timeline.
+        <!-- <a href="#" id="more">more</a> -->
+      </div>
+    </div>
+
+    <!--
+    <nav class="nav" role="navigation" id="nav">
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <a href="http://senseabledb.mit.edu/about" id="nav-about">About</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="http://senseabledb.mit.edu/partners" id="nav-partners">Partners</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="http://senseabledb.mit.edu/contact" id="nav-contact">Contact</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="http://senseabledb.mit.edu/careers" id="nav-careers">Opportunities</a>
+        </li>
+      </ul>
+    </nav>
+    -->
+
+    <div class="timelineControl" id="toggle">
+      <div class="timelineControl-label">
+        Timeline is
+      </div>
+      <button class="timelineControl-toggle"></button>
+      <div class="timelineControl-state">absolute</div>
+      <div class="timelineControl-state">compressed</div>
+    </div>
+  </header>
+
+  <section id="content">
+    <div class="timeline">
+
+      <div class="timeline-overlay"></div>
+
+      <div class="timeline-categories">
+        <ul class="timeline-categories-list">
+          <li class="timeline-categories-list-item timeline-categories-list-item--huge" data-ref="projects">
+            <div class="timeline-categories-button"></div>
+            WORK
+          </li>
+          <li class="timeline-categories-list-item" data-ref="publications">
+            <div class="timeline-categories-button"></div>
+            WRITE
+          </li>
+          <li class="timeline-categories-list-item" data-ref="people">
+            <div class="timeline-categories-button"></div>
+            PEOPLE
+          </li>
+          <li class="timeline-categories-list-item" data-ref="exhibits">
+            <div class="timeline-categories-button"></div>
+            EXHIBIT
+          </li>
+          <li class="timeline-categories-list-item" data-ref="presentations">
+            <div class="timeline-categories-button"></div>
+            SPEAK
+          </li>
+          <li class="timeline-categories-list-item" data-ref="courses">
+            <div class="timeline-categories-button"></div>
+            TEACH
+          </li>
+          <li class="timeline-categories-list-item" data-ref="patents">
+            <div class="timeline-categories-button"></div>
+            PATENT
+          </li>
+          <li class="timeline-categories-list-item" data-ref="wins">
+            <div class="timeline-categories-button"></div>
+            WIN
+          </li>
+          <li class="timeline-categories-list-item" data-ref="news">
+            <div class="timeline-categories-button"></div>
+            NEWS
+          </li>
+        </ul>
+      </div>
+
+      <div class="timeline-inner">
+        <div class="timeline-parts"></div>
+
+        <div class="timeline-dates"></div>
+
+        <div class="timeline-item timeline-item--huge" id="projects">
+          <div class="timeline-item-more">
+            <div class="timeline-item-more-inner"></div>
+          </div>
+          <div class="timeline-item-more-nose"></div>
+          <div class="timeline-item-boxes"></div>
+        </div>
+
+        <div class="timeline-item" id="publications">
+          <div class="timeline-item-more">
+            <div class="timeline-item-more-inner"></div>
+          </div>
+          <div class="timeline-item-more-nose"></div>
+          <div class="timeline-item-boxes"></div>
+        </div>
+
+        <div class="timeline-item" id="people">
+          <div class="timeline-item-more">
+            <div class="timeline-item-more-inner"></div>
+          </div>
+          <div class="timeline-item-more-nose"></div>
+          <div class="timeline-item-boxes"></div>
+        </div>
+
+        <div class="timeline-item" id="exhibits">
+          <div class="timeline-item-more">
+            <div class="timeline-item-more-inner"></div>
+          </div>
+          <div class="timeline-item-more-nose"></div>
+          <div class="timeline-item-boxes"></div>
+        </div>
+
+        <div class="timeline-item" id="presentations">
+          <div class="timeline-item-more">
+            <div class="timeline-item-more-inner"></div>
+          </div>
+          <div class="timeline-item-more-nose"></div>
+          <div class="timeline-item-boxes"></div>
+        </div>
+
+        <div class="timeline-item" id="courses">
+          <div class="timeline-item-more">
+            <div class="timeline-item-more-inner"></div>
+          </div>
+          <div class="timeline-item-more-nose"></div>
+          <div class="timeline-item-boxes"></div>
+        </div>
+
+        <div class="timeline-item" id="patents">
+          <div class="timeline-item-more">
+            <div class="timeline-item-more-inner"></div>
+          </div>
+          <div class="timeline-item-more-nose"></div>
+          <div class="timeline-item-boxes"></div>
+        </div>
+
+        <div class="timeline-item" id="wins">
+          <div class="timeline-item-more">
+            <div class="timeline-item-more-inner"></div>
+          </div>
+          <div class="timeline-item-more-nose"></div>
+          <div class="timeline-item-boxes"></div>
+        </div>
+
+        <div class="timeline-item" id="news">
+          <div class="timeline-item-more">
+            <div class="timeline-item-more-inner"></div>
+          </div>
+          <div class="timeline-item-more-nose"></div>
+          <div class="timeline-item-boxes"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="timelineInspector is-closed">
+    <div class="timelineInspector-flap">
+      <i class="fa fa-angle-down icon-show"></i>
+      <i class="fa fa-angle-up icon-hide"></i>
+    </div>
+    <div class="timelineInspector-wrapper">
+      <div class="timelineInspector-inner">
+        <div class="timelineInspector-time">May 2007</div>
+        <canvas id="minimap"></canvas>
+        <div class="timelineInspector-drag"></div>
+      </div>
+      <div class="timelineInspector-legend">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-about" class="popup mfp-hide mfp-with-anim">
+  <div class="mfp-close"></div>
+</div>
+
+<div id="popup-partners" class="popup mfp-hide mfp-with-anim">
+  <div class="mfp-close"></div>
+</div>
+
+<div id="popup-careers" class="popup mfp-hide mfp-with-anim">
+  <div class="mfp-close"></div>
+</div>
+
+<div id="popup-contact" class="popup mfp-hide mfp-with-anim">
+  <div class="mfp-close"></div>
+</div>
+
+<script type="text/template" id="box-person-tpl">
+  <a class="box box--person {{= link ? 'box--hasLink' : '' }}" data-part="{{= part }}" href="{{= (link || '#') }}">
+    <div class="box-image"></div>
+    <div class="box-content">
+      <div class="box-overlay">
+        <div class="box-overlay-text">
+          <span>{{= title }}</span>
+          <small>{{= moment(date).format('Do MMM YYYY') }}</small>
+        </div>
+      </div>
+      {{ if (initials) { }}
+        <div class="box-initials">{{= initials }}</div>
+      {{ } }}
+    </div>
+  </a>
+</script>
+
+<script type="text/template" id="box-project-tpl">
+  <a class="box box--project {{= link ? 'box--hasLink' : '' }}" data-part="{{= part }}" href="{{= (link || '#') }}">
+    <div class="box-image"></div>
+    <div class="box-content">
+      <div class="box-overlay">
+        <div class="box-overlay-text">
+          <span>{{= title }}</span>
+          <small>{{= moment(date).format('Do MMM YYYY') }}</small>
+        </div>
+      </div>
+      <div class="box-title">{{= title }}</div>
+      <div class="box-subtitle">{{= subtitle }}</div>
+      <div class="box-text">{{= text }}</div>
+    </div>
+  </a>
+</script>
+
+<script type="text/template" id="box-extended-tpl">
+  <a class="box box--extended {{= link ? 'box--hasLink' : '' }}" data-part="{{= part }}" href="{{= (link || '#') }}">
+    <div class="box-content">
+      <div class="box-overlay">
+        <div class="box-overlay-text">
+          <span>{{= title }}</span>
+          <small>{{= moment(date).format('Do MMM YYYY') }}</small>
+        </div>
+      </div>
+      <div class="box-title">{{= title }}</div>
+      <div class="box-subtitle">{{= subtitle }}</div>
+      <div class="box-avatars">
+      {{ _.each(people.slice(0,5), function(person) { }}
+        <div class="box-avatar" style="background-image: url({{= person.image }})"></div>
+      {{ }); }}
+      </div>
+    </div>
+  </a>
+</script>
+
+<script type="text/template" id="box-tpl">
+  <a class="box {{= link ? 'box--hasLink' : '' }}" data-part="{{= part }}"  href="{{= (link || '#') }}">
+    <div class="box-content">
+      <div class="box-overlay">
+        <div class="box-overlay-text">
+          <span>{{= title }}</span>
+          <small>{{= moment(date).format('Do MMM YYYY') }}</small>
+        </div>
+      </div>
+      <div class="box-title">{{= title }}</div>
+      <div class="box-subtitle">{{= subtitle }}</div>
+    </div>
+  </a>
+</script>
+
+<script type="text/template" id="box-hidden-tpl">
+  <div class="box box-others box--visible" data-part="{{= part }}">
+    <div class="box-content">
+      {{ if (count > 3) { }}
+        <div class="box-others-count">{{= count }}</div>
+      {{ } else { _.each(new Array(count), function() { }}
+        <div class="box-others-dot"></div>
+      {{ })} }}
+    </div>
+  </div>
+</script>
+
+<script type="text/template" id="box-small-tpl">
+  <a class="box box--small box--visible {{= link ? 'box--hasLink' : '' }}"  href="{{= (link || '#') }}">
+    <div class="box-content">
+      <div class="box-overlay">
+        <div class="box-overlay-text">
+          <span>{{= title }}</span>
+          <small>{{= moment(date).format('Do MMM YYYY') }}</small>
+        </div>
+      </div>
+      <div class="box-title">{{= title }}</div>
+      <div class="box-subtitle">{{= subtitle }}</div>
+    </div>
+  </a>
+</script>
+
+<script type="text/template" id="part-tpl">
+  <div class="timeline-part {{= modifier}}">
+    <div class="timeline-part-date">
+      {{= date }}
+    </div>
+  </div>
+</script>
+  <script>
+    var $buoop = {
+      vs: { i:9, f:15, o:12.1, s:5.1 },
+      c: 2,
+      test: false
+    };
+    function $buo_f() {
+      var e = document.createElement("script");
+      e.src = "//browser-update.org/update.js";
+      document.body.appendChild(e);
+    }
+    try {
+      document.addEventListener("DOMContentLoaded", $buo_f,false)
+    } catch(e) {
+      window.attachEvent("onload", $buo_f)
+    }
+  </script>
+</body>
+</html>
