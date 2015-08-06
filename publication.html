@@ -1,0 +1,311 @@
+
+<html>
+<head>
+	<title>Publications</title>
+
+	<!--     <link href="data.php" rel="exhibit/data" type="application/jsonp"> -->
+
+	<link rel="exhibit/data" 
+	   type="application/jsonp"
+	   href="https://spreadsheets.google.com/feeds/list/0ApA3s1Y4G5IDdDE5WmFILVM5TjFiN1RkQkcwMXVQY3c/od6/public/basic?alt=json-in-script"
+	   ex:converter="googleSpreadsheets" />
+    <link href="http://senseabledb.mit.edu/assets/application-c0fe1dd5c7d2b4dcd13e41e8a0bfa3c9.css" media="all" rel="stylesheet" />
+
+	<script src="http://api.simile-widgets.org/exhibit/2.2.0/exhibit-api.js"
+			type="text/javascript"></script>
+	
+   <!-- <script type="text/javascript" src="http://static.simile.mit.edu/exhibit/api-2.0/exhibit-api.js"></script>
+	<script type="text/javascript" src="http://static.simile.mit.edu/exhibit/extensions-2.0/time/time-extension.js"></script>
+	
+
+	<script src="http://citeline.mit.edu/api/exhibit/api/exhibit-api.js" type="text/javascript"></script>
+	<script src="http://citeline.mit.edu/api/exhibit/extensions/time/time-extension.js" type="text/javascript"></script>
+
+	<script src="http://citeline.mit.edu/api/jquery/jquery.js" type="text/javascript"></script>
+	<script src="http://citeline.mit.edu/api/jsmath/plugins/noImageFonts.js" type="text/javascript"></script>
+	<script src="http://citeline.mit.edu/api/jsmath/jsMath.js" type="text/javascript"></script>
+	<script src="http://citeline.mit.edu/api/jsmath/plugins/tex2math.js" type="text/javascript"></script>
+	<script src="http://citeline.mit.edu/api/jstex/api/jsTeX.js" type="text/javascript"></script>
+	<script src="http://citeline.mit.edu/scripts/exhibit-jsmath.js" type="text/javascript"></script> -->
+
+	<style>
+		body {
+			padding:        0;
+			margin:         0;
+<!-- 			background:     #eee;
+ -->			font-family: theinhardtregular;
+			font-size:      9pt;
+		}
+
+		table {
+			font-size: 100%;
+            font-family: theinhardtregular;
+		}
+
+		#left-side {
+			background: url(http://citeline.mit.edu/templates/bibtex-classic/images/left-shadow.png) right repeat-y;
+		}
+
+		#right-side {
+			background: url(http://citeline.mit.edu/templates/bibtex-classic/images/right-shadow.png) left repeat-y;
+		}
+
+		#the-outer-page {
+			width:          840px;
+			background:     white;
+			text-align:     left;
+			background:     url(http://citeline.mit.edu/templates/bibtex-classic/images/left-right-edges.png) repeat-y;
+		}
+
+		#the-inner-page {
+			padding:        10px 20px 20px 20px;
+			padding-bottom: 10em;
+			background: url(http://citeline.mit.edu/templates/bibtex-classic/images/top-edges.png) no-repeat;
+		}
+
+		#the-outer-banner {
+			background: url(http://www.mamartino.com/senseable/banner.jpg) no-repeat;
+			height:     15px;
+		}
+
+		#the-header {
+			height:         40px;
+			padding:        3px;
+			margin-bottom:  2px;
+			background:     url(http://citeline.mit.edu/templates/bibtex-classic/images/top-shadow.png) bottom repeat-x;
+            font-family: theinhardtregular;
+		}
+
+		#the-affiliation {
+            box-sizing: border-box;
+            color: rgb(153, 153, 153);
+            display: inline-block;
+            font-family: theinhardtmedium;
+            font-size: 12px;
+            height: 40px;
+            line-height: 80px;
+            padding-bottom: 0px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 0px;
+            position: relative;
+            bottom:5px;
+            width: auto;
+		}
+
+		#the-name-plate {
+			font-family: theinhardtregular;
+			font-weight: bold;
+			font-size:   16pt;
+		}
+
+		#first-name {
+			color:       black;
+            font-family: theinhardtregular;
+		}
+
+		#last-name {
+			color:       #666;
+            font-family: theinhardtregular;
+		}
+
+		#the-inner-banner {
+			padding:    50px 30px;
+            font-family: theinhardtregular;
+		}
+
+		#the-title {
+			color: #999999;
+			font-size:      18pt;
+			width:          50%;
+			text-align:     center;
+			font-family:    theinhardtregular;
+            display: inline;
+            right: 130px;
+            top: 30px;
+            position: absolute;
+		}
+
+		#the-subtitle {
+			color:          #666;
+			font-size:      90%;
+			width:          50%;
+			font-style:     italic;
+			text-align:     center;
+            font-family: theinhardtregular;
+		}
+
+		#content{
+			margin-top: 2px;
+			background: url(http://citeline.mit.edu/templates/bibtex-classic/images/bottom-shadow.png) repeat-x;
+            font-family: theinhardtregular;
+		}
+
+		#main-column {
+			padding-top:    2em;
+			vertical-align: top;
+			width: 100%;
+            font-family: theinhardtregular;
+		}
+
+		#right-column {
+			vertical-align: top;
+            font-family: theinhardtregular;
+		}
+
+		#bibtex-facets {
+			padding:        1em;
+			margin-left:    1em;
+			width:          15em;
+			border-left:    1px solid #ddd;
+			border-right:   1px solid #ddd;
+			border-bottom:  1px solid #ddd;
+            font-family: theinhardtregular;
+		}
+
+		#powered-by {
+			font-size:  80%;
+			color:      #888;
+			text-align: center;
+			margin:     10px 0px;
+            font-family: theinhardtregular;
+		}
+
+		div.playground-exhibitBuilder-widget-grabBar {
+			background-color:     #ddd;
+            font-family: theinhardtregular;
+		}
+
+		div.playground-exhibitBuilder-widget-menuBox {
+			background-color:     #ddd;
+            font-family: theinhardtregular;
+		}
+
+		div.playground-exhibitBuilder-viewRegion-viewControls {
+			background-color:     #ddd;
+            font-family: theinhardtregular;
+		}
+
+		div.exhibit-facet, div.exhibit-flowingFacet {
+			margin-bottom: 1em;
+            font-family: theinhardtregular;
+		}
+
+		div.exhibit-facet-body {
+			background: white;
+			border: 0;
+            font-family: theinhardtregular;
+		}
+
+		div.publication-lens {
+			margin-bottom: 2em;
+			padding:       5px;
+            font-family: theinhardtregular;
+		}
+
+		.publication-lens .title {
+			font-weight: bold;
+			font-size:   100%;
+			color:       #885216;
+            font-family: theinhardtregular;
+		}
+
+		a {
+			color:       #885216;
+            font-family: theinhardtregular;
+		}
+
+		div.abstract {
+			margin:     1em;
+			color:      #888;
+			font-style: italic;
+            font-family: theinhardtregular;
+		}
+
+		#jsMath_Warning {
+			display: none;
+            font-family: theinhardtregular;
+		}
+        
+        #edit {
+            font-family: theinhardtregular;
+        }
+	</style>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tr valign="top">
+	<td id="left-side" width="40%"></td>
+	<td style="vertical-align: top"><div id="the-outer-page" style="height: 100%">
+		<div id="the-inner-page">
+			<table border="0" cellpadding="0" cellspacing="0" id="the-header" width="100%">
+				<tr valign="bottom">
+					<td><a href="http://web.mit.edu/" title="Massachusetts Institute of Technology"><img src="http://senseabledb.mit.edu/assets/MIT-logo-f45e53bac8dc39de3ba62798d9153394.svg"></a> 
+                    <span id="the-affiliation">SENSEABLE CITY LAB</span>
+                    <div id="the-title">Publications</div>
+                    </td>
+					
+                    <td align="right"><span id="the-name-plate"><span id="first-name"></span><span id="last-name"></span></span></td>
+                    
+                </tr>
+			</table>
+			<div id="the-outer-banner">
+				<div id="the-inner-banner">
+					
+				</div>
+			</div>
+			<div id="banner-under-pane"></div>
+			<!-- <div ex:itemTypes="Publication" ex:role="exhibit-collection"></div>
+			<div class="author-lens" ex:itemTypes="Author" ex:role="lens" style="display: none;">
+				<div><span ex:content=".label"></span> (<span ex:content=".affiliation"></span>)</div>
+				<ul ex:content="!author"><li ex:content="value"></li></ul>
+			</div>  To implement later... you need to make a new column called "type" and add all the authors, classifying them as "Author" and pubs as "Publication" -->
+
+			<div class="publication-lens" ex:role="lens" style="display: none;"> <!-- ex:itemTypes="Publication"  This needs to be added back in as well -->
+				<div ex:if-exists=".author">
+					<span class="authors" ex:content=".author"></span> <span ex:if-exists=".year">(<span ex:content=".year"></span>)</span>
+					<a ex:if-exists=".bdsk-url-1" ex:href-content=".bdsk-url-1"> [pdf]</a>.
+				</div>
+				<div><span class="title" ex:content=".label"></span>.</div>
+				<div ex:if-exists=".booktitle">
+					<span ex:content=".booktitle"></span><span ex:if-exists=".volume">, <span ex:content=".volume"></span>(<span ex:content=".number"></span>)</span><span ex:if-exists=".pages">, <span ex:content=".pages"></span></span>.
+				</div>
+				<div ex:if-exists=".journal">
+					<span class="journal" ex:content=".journal"></span><span ex:if-exists=".volume">, <span ex:content=".volume"></span><span ex:if-exists=".number">(<span ex:content=".number"></span>)</span></span><span ex:if-exists=".pages">, <span ex:content=".pages"></span></span>.
+				</div>
+				<div ex:if-exists=".publisher"><span ex:if-exists=".location"><span ex:content=".location"></span>: </span><span ex:content=".publisher"></span></div>
+				<div ex:if-exists=".cat">Categories: <i><span ex:content=".cat"></span></i></div>
+				<div ex:if-exists=".keywords">Keywords: <i><span ex:content=".keywords"></span></i></div>
+				<div>
+					<span ex:if-exists=".url">[<a ex:href-content=".url">link</a>]</span>
+					<span ex:if-exists=".doi">[<a ex:href-content=".doi">doi</a>]</span>
+				</div>
+				<div class="abstract" ex:if-exists=".abstract"><span ex:content=".abstract"></span></div>
+			</div>
+
+			<div id="content">
+				<table border="0" cellpadding="0" cellspacing="0" id="main-layout" width="100%"><tr>
+					<td id="main-column">
+						<div ex:role="viewPanel" id="bibtex-views">
+							<DIV ex:directions="descending" ex:grouped="true" ex:label="List" ex:orders=".year" ex:role="view" ex:showall="true" ex:viewclass="Tile" id="view862263"></DIV>
+						</div>
+					</td>
+					<td id="right-column">
+						<div id="bibtex-facets">
+							<DIV ex:facetclass="TextSearch" ex:facetlabel="Search" ex:role="facet" id="facet119172"></DIV>
+							<DIV ex:expression=".pub-type" ex:facetclass="List" ex:facetlabel="Publication Type" ex:formatter="renderTeX" ex:height="10em" ex:role="facet" ex:scroll="true" ex:sortmode="count" id="facet13952"></DIV>
+							<DIV ex:expression=".year" ex:facetclass="List" ex:facetlabel="Year" ex:formatter="renderTeX" ex:height="10em" ex:role="facet" ex:scroll="true" ex:sortmode="value" id="facet362971"></DIV>
+							<DIV ex:expression=".author" ex:facetclass="List" ex:facetlabel="Author" ex:formatter="renderTeX" ex:height="10em" ex:role="facet" ex:scroll="true" ex:sortmode="count" id="facet33947"></DIV>
+						</div>
+					</td>
+				</tr></table>
+			</div>
+		</div>
+	</div></td>
+	<td id="right-side" width="40%"></td>
+</tr></table>
+
+</body>
+
+</html>
