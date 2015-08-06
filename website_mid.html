@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>MIT SENSEable City Lab</title>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+
+<!-- <link href="http://senseabledb.mit.edu/assets/application-c0fe1dd5c7d2b4dcd13e41e8a0bfa3c9.css" media="all" rel="stylesheet" />
+ -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- Google Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400italic,300,300italic,400' rel='stylesheet' type='text/css'>
+
+<style>
+
+@font-face
+{
+	font-family: 'theinhardtregular';
+	font-style: normal;
+	font-weight: normal;
+	src: url(http://senseabledb.mit.edu/assets/theinhardtreg-webfont-4fbe87fb90ebe22c60826bf761225259.eot);
+	src: url(http://senseabledb.mit.edu/assets/theinhardtreg-webfont-4fbe87fb90ebe22c60826bf761225259.eot?#iefix) format("embedded-opentype"),url(http://senseabledb.mit.edu/assets/theinhardtreg-webfont-69d07f6dc2305bb297216a6505d13488.woff2) format("woff2"),url(http://senseabledb.mit.edu/assets/theinhardtreg-webfont-c3616b20ef73975eb029987b0fd30841.woff) format("woff"),url(http://senseabledb.mit.edu/assets/theinhardtreg-webfont-2c248b73ff9b0662b5848a0f34b56c40.ttf) format("truetype"),url(http://senseabledb.mit.edu/assets/theinhardtreg-webfont-ea2644ee06a39e76575f733696589612.svg#theinhardtregular) format("svg");
+}
+@font-face
+{
+	font-family: 'theinhardtmedium';
+	font-style: normal;
+	font-weight: normal;
+	src: url(http://senseabledb.mit.edu/assets/theinhardtmed-webfont-1e04084106113ea743afe0266c7ce7cd.eot);
+	src: url(http://senseabledb.mit.edu/assets/theinhardtmed-webfont-1e04084106113ea743afe0266c7ce7cd.eot?#iefix) format("embedded-opentype"),url(http://senseabledb.mit.edu/assets/theinhardtmed-webfont-c01dabc9151d52fe45dd501476c4fbc7.woff2) format("woff2"),url(http://senseabledb.mit.edu/assets/theinhardtmed-webfont-a8692121eb26b801fd589e805b7bcd9a.woff) format("woff"),url(http://senseabledb.mit.edu/assets/theinhardtmed-webfont-43ef80f95268c9bdbbb14ff25439b89a.ttf) format("truetype"),url(http://senseabledb.mit.edu/assets/theinhardtmed-webfont-09ba6a53f3496d1be646ed7f64786b31.svg#theinhardtmedium) format("svg");
+}
+@font-face
+{
+	font-family: 'FontAwesome';
+	font-style: normal;
+	font-weight: normal;
+	src: url("http://senseabledb.mit.edu/assets/fontawesome-webfont-193779f97a012b987d59a85827509b89.eot");
+	src: url("http://senseabledb.mit.edu/assets/fontawesome-webfont-193779f97a012b987d59a85827509b89.eot?#iefix") format("embedded-opentype"),url("http://senseabledb.mit.edu/assets/fontawesome-webfont-8256e2389e155e0b32d94d9afacdf5e6.woff") format("woff"),url("http://senseabledb.mit.edu/assets/fontawesome-webfont-b3884e8c99f97377e242bc01a2aebfd6.ttf") format("truetype"),url("http://senseabledb.mit.edu/assets/fontawesome-webfont-d42172918017239238457bdd6f8152bf.svg#fontawesomeregular") format("svg");
+}
+
+
+
+div.row-padded { padding-top: 0px; }
+
+#test {
+    font-family: theinhardtregular;
+    color: #999999;
+    font-size: 12px;
+}
+
+#edit {
+    font-family: theinhardtregular;
+}
+
+#modi_intro {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: block;
+    font-size: 40px;
+    height: 180px;
+    line-height: 20px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 0px;
+    width: 1170px;
+}
+
+p,li {margin: 0 0 10 0px; font-size: 10px; font-family: 'Roboto', 'Arial', sans-serif; color: #333; }
+p.no-line-space {margin: 0px; }
+
+h1 {font-size: 48px; font-family: 'Roboto'; color: #444; }
+h2 {font-size: 24px; font-family: 'Roboto', 'Arial', sans-serif; color: #444; }
+
+div#introduction p { font-size: 14px; text-align: justify; }
+div#links {overflow-x:auto; overflow-y:hidden; white-space: nowrap; width:100%; display: none; background-color: #222; }
+div.project-pane { display: inline-block; vertical-align:top; white-space: normal; width: 100px; padding: 10px 5px 0px 0px; margin-right: 10px;}
+img.project-thumb {width: 100px; height: 100px; margin-bottom: 3px; overflow:hidden;}
+
+.fade-box { max-height: 300px; position: relative; overflow: hidden; }
+.fade-box .read-more { position: absolute; bottom: 0; left: 0; width: 100%; text-align: center; margin: 0; padding: 50px 0;
+/* "transparent" only works here because == rgba(0,0,0,0) */
+background-image: linear-gradient(to bottom, transparent, white);
+}
+a:link {color: #aaa; text-decoration: none}
+a:visited {color: #aaa; text-decoration: none}
+a:hover {text-decoration: underline}
+a:active {text-decoration: none}
+
+.pp{font-family:theinhardtregular}
+
+.brand-label-new{
+	display: inline-block;
+	font-family: theinhardtregular;
+	font-size: 14px;
+	height: 32px;
+	left: 230px;
+	line-height: 1.3em;
+	margin-top: -17px;
+	position: absolute;
+	top: 60%;
+}
+
+.brand-name-new{
+	display: inline-block;
+	font-family: theinhardtmedium;
+	font-size: 12px;
+	line-height: 80px;
+	padding: 0 20px 0 0;
+	position: relative;
+}
+
+.brand-name-new:after
+{
+	border-right: 1px solid #c1c1c1;
+	content: '';
+	display: block;
+	height: 30px;
+	margin-top: -15px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 1px;
+}
+
+.col-md-12
+{
+    position: relative;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+</style>
+
+</HEAD>
+<BODY>
+<div class="container">
+<div class="row"><br/><br/></div> <!-- spacer -->
+<div class="row row-padded">
+<div class="col-md-12">
+<!--IMG class="logo" style="FLOAT: left" src="images/senseable.jpg" / -->
+
+    <div class="brand">
+      <img class="brand-img" style = "margin:15px" src="http://senseabledb.mit.edu/assets/MIT-logo-f45e53bac8dc39de3ba62798d9153394.svg"/>
+      <div class="brand-name-new">SENSEABLE CITY LAB </div>
+      <div class="brand-label-new">
+        Discover Senseable through who we are and what we produce. This is a
+        lens into our entire database
+      </div>
+    </div>
+
+<!--
+<h1>
+sense<em>able</em> city lab :.::
+<A href="http://web.mit.edu/" target=_top><IMG class="logo" style="FLOAT: right" src="http://senseable.mit.edu/images/mit.gif" /></A>
+</h1>
+-->
+
+</div>
+</div>
+
+
+
+    
+    
+<div class="row row-padded" id="modi_intro">
+
+<div class="col-sm-6" >
+<p id = "test"> Situated at the intersection of architecture, urban design, engineering, human-computer interaction and the social sciences, the MIT Senseable City Lab addresses the relationship between cities, new technologies and people. </p>
+<p id = "test"> The Digital Revolution is changing the way we live today as radically as the Industrial Revolution almost two centuries ago. The Lab aims to investigate and anticipate these changes and their implications at the city scale. Our work draws on diverse fields to capture the multi-disciplinary nature of urban problems and deliver research and applications that empower citizens to make choices that result in a more liveable urban condition. </p>
+</div>
+
+<div class="col-sm-6">
+<p id = "test"> We practice a revolutionary approach to research - as opposed to evolutionary. It envisions solutions that may be out of the reach of today's technology, but works towards developing the scientific grounding for their realisation. </p>
+<p id = "test"> The Lab brings together MIT researchers and external organisations: partner cities offer test cases, industry provide technical expertise and funding, and the lab unites public and private sectors with a shared vision of the future. </p>
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div class="row row-padded">
+<div id="links" class="col-md-12"></div>
+</div>
+
+<div class="row">
+<div class="col-md-2 col-sm-4"><h2 id = "edit">papers</h2>
+<p><A href="papers/publications.html" target=_top id = "edit">Browse all papers</A></p>
+<p id = "edit">Kung, K., Greco, K., Sobolevsky, S., and Ratti, C. (2014). Exploring Universal Patterns in Human Home-Work Commuting from Mobile Phone Data. PLOS One. <a href="papers/pdf/2014-06-Commuting.pdf" target=_top id = "edit">&gt;&gt; link</a></p>
+<p id = "edit">Santi, P., Resta, G., Szell, M., Sobolevsky, S., Strogatz, S., and Ratti, C. (2013). Quantifying the Benefits of Vehicle Pooling with Shareability Networks. Proceedings of the National Academy of Sciences, 111(37), 13290-13294. <a href="papers/pdf/20140916_Santietal_PNAS.pdf" target=_top id = "edit">&gt;&gt; link</a></p>
+<!-- p class="no-line-space"><a href="papers/publications.html">&gt;&gt; more</a></p -->
+</div>
+<div class="col-md-2 col-sm-4"><h2 id = "edit">news</h2>
+<p>
+<a href="signup.html" id = "edit">Subscribe to our newsletter</a>
+</p>
+<div id="newsletters" class="fade-box visible-md-block visible-lg-block">
+<p class="read-more">&nbsp;</p>
+</div>
+<div class="dropdown visible-xs-block visible-sm-block">
+<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+Newsletters <span class="caret"></span>
+</button>
+<ul id="newsletters-dropdown" class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>
+</div>
+</div>
+<div class="col-md-2 col-sm-4"><h2 id = "edit">positions</h2>
+<p id = "edit">
+We always seek outstanding candidates from a variety of backgrounds besides our specific position openings.<br />
+<A href="positions/Research_Opportunities.pdf" target=_top><SPAN class=s1 id = "edit">&gt;&gt; more</SPAN></A>
+</P>
+<p id = "edit">
+Open positions - Boston<br />
+<A href="positions/Postdoctoral%20Associate%20Extended%20Job%20Description.pdf" target=_top id = "edit"><SPAN class=s1>&gt;&gt; Senior Postdoctoral Position</SPAN></A>
+</p>
+<p>
+<A href="positions/Data%20Visualization%20Specialist.pdf" target=_top id = "edit">
+<SPAN class=s1>&gt;&gt; Data Visualization Specialist</SPAN></A>
+</p>
+<p>
+<A href="positions/Postdoctoral%20Position%20Complex%20Systems%20URB.pdf" target=_top id = "edit">
+<SPAN class=s1>&gt;&gt; Postdoctoral Position</SPAN><br />
+complex systems at the urban/regional scale</A>
+</p>
+<p>
+<A href="positions/Postdoctoral%20Position%20Complex%20Systems%20MOBILITY.pdf" target=_top id = "edit">
+<SPAN class=s1>&gt;&gt; Postdoctoral Position</SPAN><br />
+complex systems and human mobility</A>
+</P>
+</div>
+<div class="col-md-4 col-sm-8"><h2 id = "edit"> people</h2>
+<div id="researchers" class="fade-box">
+<p class="read-more">&nbsp;</p>
+</div>
+</div>
+<div class="col-md-2 col-sm-4"><h2 id = "edit">contacts</h2>
+<p id = "edit">
+SENSEable City Laboratory<br/>
+MIT 9-209<br/>
+77 Massachusetts Avenue<br/>
+Cambridge, MA 02139 USA<br/>
+T++ 1-617-324-4474<br/>
+F++ 1-617-258-8081<br/>
+W senseable.mit.edu<br/>
+E senseable-contacts@mit.edu<br/>
+</p>
+<p>
+<A href="http://twitter.com/#!/SenseableCity" target=_top><img src="http://senseable.mit.edu/images/twitter_senseable.png" /></A>
+<A href="http://www.facebook.com/SenseableCity" target=_top><img src="http://senseable.mit.edu/images/facebook_senseable.png" /></A>
+</p>
+</div>
+</div>
+
+<script type="text/javascript">
+/*var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2565132-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+*/
+
+$(function() {
+//handler for .ready() called, DOM fully constructed, run code here
+
+$.getJSON( "http://senseable.mit.edu/php/people.php", add_researchers);
+$.getJSON( "http://senseable.mit.edu/php/newsletters.php", add_newsletters);
+$.getJSON( "http://senseabledb.mit.edu/api/all.json", add_projects);
+});
+
+function add_researchers(data) {
+add_researchers_group(data.management, "");
+add_researchers_group(data.current_members, "Current Researchers: ");
+add_researchers_group(data.former_members, "Past Researchers: ");
+add_researchers_group(data.advisory_board, "Advisory Board: ");
+}
+
+function add_researchers_group(group, prefix) {
+var items = [];
+$.each( group, function( key , person ) {
+items.push( (person.website ? ( "<a style = 'font-family: theinhardtregular; ' id='" + person.id + "' href='" + person.website + "' target=_blank>" ) : "") +
+person.first_name + " " +
+person.last_name +
+(person.position ? (" (" + person.position + ")") : "") +
+(person.website ? "</a>" : "") );
+});
+$( "<p/>", {"id" : "edit", html: prefix + items.join( ", " ) }).appendTo( "#researchers" );
+}
+
+function add_newsletters(data) {
+var month_names = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
+// var items = [];
+$.each( data, function( key, issue ) {
+$( "<p/>", {
+"class":'no-line-space',
+html: "<a style = 'font-family: theinhardtregular; ' href='" + issue.link + "' target=_blank>" +
+month_names[issue.month] + " " +
+issue.year +
+"</a>"
+}).appendTo( "#newsletters" );
+
+$( "<li/>", {
+"class":'',
+html: "<a href='" + issue.link + "' target=_blank>" +
+month_names[issue.month] + " " +
+issue.year +
+"</a>"
+}).appendTo( "#newsletters-dropdown" );
+});
+
+var html = $.parseHTML("<P class='no-line-space visible-md-block visible-lg-block'><A href='news' target=_top>Earlier articles</A></P>");
+$( "#newsletters" ).append( html );
+html = $.parseHTML("<li><A href='news' target=_top>Earlier articles</A></li>");
+$( "#newsletters-dropdown" ).append( html );
+}
+
+function add_projects(data) {
+var image_root_url = "http://senseabledb.mit.edu";
+$.each( data.projects , function( key, project ) {
+$( "<div/>", {
+"class":'project-pane',
+html: "<p><a href='" + project.link + "' target=_blank>" +
+"<img class='project-thumb' src='" + image_root_url + project.image + "'/><br/>" +
+project.title +
+"</a></p>"
+}).appendTo( "#links" );
+});
+$( "#links" ).slideDown("slow");
+}
+
+$( ".fade-box .read-more" ).click(function() {
+var $el, $ps, $p, totalHeight;
+totalHeight = 50;
+
+$el = $(this);
+$p = $el.parent();
+$ps = $p.find("p:not('.read-more')");
+// measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
+$ps.each(function() {
+totalHeight += $(this).outerHeight();
+});
+$p.css({
+// Set height to prevent instant jumpdown when max height is removed
+"height": $p.height(),
+"max-height": 9999
+})
+.animate({
+"height": totalHeight
+});
+// fade out read-more
+$el.fadeOut();
+// prevent jump-down
+return false;
+});
+
+</script>
+
+</div>
+</BODY>
+</html>
